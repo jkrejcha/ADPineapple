@@ -31,18 +31,16 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-			this.TCMain = new System.Windows.Forms.TabControl();
-			this.TPUsers = new System.Windows.Forms.TabPage();
-			this.TPGroups = new System.Windows.Forms.TabPage();
 			this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.domainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.localComputerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.DGVUsers = new System.Windows.Forms.DataGridView();
-			this.userPrincipalBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.loadColumnSetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveColumnSetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.selectColumnsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.TCMain = new System.Windows.Forms.TabControl();
+			this.TPUsers = new System.Windows.Forms.TabPage();
+			this.DGVUsers = new System.Windows.Forms.DataGridView();
 			this.ColumnIcon = new System.Windows.Forms.DataGridViewImageColumn();
 			this.givenNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +75,8 @@
 			this.distinguishedNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.structuralObjectClassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.userPrincipalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.TPGroups = new System.Windows.Forms.TabPage();
 			this.menuStrip1.SuspendLayout();
 			this.TCMain.SuspendLayout();
 			this.TPUsers.SuspendLayout();
@@ -91,27 +91,6 @@
             this.viewToolStripMenuItem});
 			resources.ApplyResources(this.menuStrip1, "menuStrip1");
 			this.menuStrip1.Name = "menuStrip1";
-			// 
-			// TCMain
-			// 
-			this.TCMain.Controls.Add(this.TPUsers);
-			this.TCMain.Controls.Add(this.TPGroups);
-			resources.ApplyResources(this.TCMain, "TCMain");
-			this.TCMain.Name = "TCMain";
-			this.TCMain.SelectedIndex = 0;
-			// 
-			// TPUsers
-			// 
-			this.TPUsers.Controls.Add(this.DGVUsers);
-			resources.ApplyResources(this.TPUsers, "TPUsers");
-			this.TPUsers.Name = "TPUsers";
-			this.TPUsers.UseVisualStyleBackColor = true;
-			// 
-			// TPGroups
-			// 
-			resources.ApplyResources(this.TPGroups, "TPGroups");
-			this.TPGroups.Name = "TPGroups";
-			this.TPGroups.UseVisualStyleBackColor = true;
 			// 
 			// connectToolStripMenuItem
 			// 
@@ -130,6 +109,45 @@
 			// 
 			this.localComputerToolStripMenuItem.Name = "localComputerToolStripMenuItem";
 			resources.ApplyResources(this.localComputerToolStripMenuItem, "localComputerToolStripMenuItem");
+			// 
+			// viewToolStripMenuItem
+			// 
+			this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadColumnSetToolStripMenuItem,
+            this.saveColumnSetToolStripMenuItem,
+            this.selectColumnsToolStripMenuItem});
+			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+			resources.ApplyResources(this.viewToolStripMenuItem, "viewToolStripMenuItem");
+			// 
+			// loadColumnSetToolStripMenuItem
+			// 
+			this.loadColumnSetToolStripMenuItem.Name = "loadColumnSetToolStripMenuItem";
+			resources.ApplyResources(this.loadColumnSetToolStripMenuItem, "loadColumnSetToolStripMenuItem");
+			// 
+			// saveColumnSetToolStripMenuItem
+			// 
+			this.saveColumnSetToolStripMenuItem.Name = "saveColumnSetToolStripMenuItem";
+			resources.ApplyResources(this.saveColumnSetToolStripMenuItem, "saveColumnSetToolStripMenuItem");
+			// 
+			// selectColumnsToolStripMenuItem
+			// 
+			this.selectColumnsToolStripMenuItem.Name = "selectColumnsToolStripMenuItem";
+			resources.ApplyResources(this.selectColumnsToolStripMenuItem, "selectColumnsToolStripMenuItem");
+			// 
+			// TCMain
+			// 
+			this.TCMain.Controls.Add(this.TPUsers);
+			this.TCMain.Controls.Add(this.TPGroups);
+			resources.ApplyResources(this.TCMain, "TCMain");
+			this.TCMain.Name = "TCMain";
+			this.TCMain.SelectedIndex = 0;
+			// 
+			// TPUsers
+			// 
+			this.TPUsers.Controls.Add(this.DGVUsers);
+			resources.ApplyResources(this.TPUsers, "TPUsers");
+			this.TPUsers.Name = "TPUsers";
+			this.TPUsers.UseVisualStyleBackColor = true;
 			// 
 			// DGVUsers
 			// 
@@ -173,35 +191,8 @@
 			this.DGVUsers.DataSource = this.userPrincipalBindingSource;
 			resources.ApplyResources(this.DGVUsers, "DGVUsers");
 			this.DGVUsers.Name = "DGVUsers";
+			this.DGVUsers.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.DGVUsers_UserDeletingRow);
 			this.DGVUsers.DoubleClick += new System.EventHandler(this.DGVUsers_DoubleClick);
-			// 
-			// userPrincipalBindingSource
-			// 
-			this.userPrincipalBindingSource.DataSource = typeof(System.DirectoryServices.AccountManagement.UserPrincipal);
-			// 
-			// viewToolStripMenuItem
-			// 
-			this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loadColumnSetToolStripMenuItem,
-            this.saveColumnSetToolStripMenuItem,
-            this.selectColumnsToolStripMenuItem});
-			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-			resources.ApplyResources(this.viewToolStripMenuItem, "viewToolStripMenuItem");
-			// 
-			// loadColumnSetToolStripMenuItem
-			// 
-			this.loadColumnSetToolStripMenuItem.Name = "loadColumnSetToolStripMenuItem";
-			resources.ApplyResources(this.loadColumnSetToolStripMenuItem, "loadColumnSetToolStripMenuItem");
-			// 
-			// saveColumnSetToolStripMenuItem
-			// 
-			this.saveColumnSetToolStripMenuItem.Name = "saveColumnSetToolStripMenuItem";
-			resources.ApplyResources(this.saveColumnSetToolStripMenuItem, "saveColumnSetToolStripMenuItem");
-			// 
-			// selectColumnsToolStripMenuItem
-			// 
-			this.selectColumnsToolStripMenuItem.Name = "selectColumnsToolStripMenuItem";
-			resources.ApplyResources(this.selectColumnsToolStripMenuItem, "selectColumnsToolStripMenuItem");
 			// 
 			// ColumnIcon
 			// 
@@ -417,6 +408,16 @@
 			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
 			resources.ApplyResources(this.nameDataGridViewTextBoxColumn, "nameDataGridViewTextBoxColumn");
 			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+			// 
+			// userPrincipalBindingSource
+			// 
+			this.userPrincipalBindingSource.DataSource = typeof(System.DirectoryServices.AccountManagement.UserPrincipal);
+			// 
+			// TPGroups
+			// 
+			resources.ApplyResources(this.TPGroups, "TPGroups");
+			this.TPGroups.Name = "TPGroups";
+			this.TPGroups.UseVisualStyleBackColor = true;
 			// 
 			// MainForm
 			// 

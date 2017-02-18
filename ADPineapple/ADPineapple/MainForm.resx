@@ -358,7 +358,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TPGroups.Size" type="System.Drawing.Size, System.Drawing">
-    <value>799, 411</value>
+    <value>885, 359</value>
   </data>
   <data name="TPGroups.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -434,12 +434,6 @@
   </data>
   <data name="&gt;&gt;localComputerToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;userPrincipalBindingSource.Name" xml:space="preserve">
-    <value>userPrincipalBindingSource</value>
-  </data>
-  <data name="&gt;&gt;userPrincipalBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;viewToolStripMenuItem.Name" xml:space="preserve">
     <value>viewToolStripMenuItem</value>
@@ -668,6 +662,12 @@
   </data>
   <data name="&gt;&gt;nameDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;userPrincipalBindingSource.Name" xml:space="preserve">
+    <value>userPrincipalBindingSource</value>
+  </data>
+  <data name="&gt;&gt;userPrincipalBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

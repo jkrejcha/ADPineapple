@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.DirectoryServices.AccountManagement;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,8 +22,14 @@ namespace ADPineapple
 		{
 			if (DGVUsers.SelectedRows.Count > 0)
 			{
-				DGVUsers.SelectedRows[0].DataBoundItem;
+				UserConfigForm userConfig = new UserConfigForm();
+				userConfig.Show((UserPrincipal)DGVUsers.SelectedRows[0].DataBoundItem);
 			}
+		}
+
+		private void DGVUsers_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+		{
+			
 		}
 	}
 }
