@@ -29,7 +29,14 @@ namespace ADPineapple
 
 		private void DGVUsers_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
 		{
-			
+			if (Dialogs.ShowDialog(DialogType.DeleteUserWarning).Result == TaskDialogInterop.TaskDialogSimpleResult.Yes)
+			{
+
+			}
+			else
+			{
+				e.Cancel = true;
+			}
 		}
 	}
 }

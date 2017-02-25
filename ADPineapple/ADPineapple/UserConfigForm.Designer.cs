@@ -31,10 +31,16 @@
 			this.components = new System.ComponentModel.Container();
 			this.TCUserProperties = new System.Windows.Forms.TabControl();
 			this.tpGeneral = new System.Windows.Forms.TabPage();
+			this.tbWebpage = new System.Windows.Forms.TextBox();
+			this.lblWebpage = new System.Windows.Forms.Label();
+			this.tbEmail = new System.Windows.Forms.TextBox();
+			this.lblEmail = new System.Windows.Forms.Label();
+			this.tbPhoneNumber = new System.Windows.Forms.TextBox();
+			this.userPrincipalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.label1 = new System.Windows.Forms.Label();
 			this.tbOffice = new System.Windows.Forms.TextBox();
 			this.lblOffice = new System.Windows.Forms.Label();
 			this.tbDescription = new System.Windows.Forms.TextBox();
-			this.userPrincipalBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.lblDescription = new System.Windows.Forms.Label();
 			this.tbDisplayName = new System.Windows.Forms.TextBox();
 			this.lblDisplayName = new System.Windows.Forms.Label();
@@ -46,32 +52,26 @@
 			this.lblFirstName = new System.Windows.Forms.Label();
 			this.lblName = new System.Windows.Forms.Label();
 			this.tpAddress = new System.Windows.Forms.TabPage();
+			this.tpAccount = new System.Windows.Forms.TabPage();
+			this.gbAccountExpiry = new System.Windows.Forms.GroupBox();
+			this.dtpExpiry = new System.Windows.Forms.DateTimePicker();
+			this.rbAtTheEndOf = new System.Windows.Forms.RadioButton();
+			this.rbExpiresNever = new System.Windows.Forms.RadioButton();
+			this.clbAccountOptions = new System.Windows.Forms.CheckedListBox();
+			this.tpMemberOf = new System.Windows.Forms.TabPage();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.btnOK = new System.Windows.Forms.Button();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.btnApply = new System.Windows.Forms.Button();
-			this.tbPhoneNumber = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.tbEmail = new System.Windows.Forms.TextBox();
-			this.lblEmail = new System.Windows.Forms.Label();
-			this.tbWebpage = new System.Windows.Forms.TextBox();
-			this.lblWebpage = new System.Windows.Forms.Label();
-			this.tpAccount = new System.Windows.Forms.TabPage();
-			this.tpMemberOf = new System.Windows.Forms.TabPage();
-			this.clbAccountOptions = new System.Windows.Forms.CheckedListBox();
-			this.gbAccountExpiry = new System.Windows.Forms.GroupBox();
-			this.rbExpiresNever = new System.Windows.Forms.RadioButton();
-			this.rbAtTheEndOf = new System.Windows.Forms.RadioButton();
-			this.dtpExpiry = new System.Windows.Forms.DateTimePicker();
 			this.TCUserProperties.SuspendLayout();
 			this.tpGeneral.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.userPrincipalBindingSource)).BeginInit();
+			this.tpAccount.SuspendLayout();
+			this.gbAccountExpiry.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
-			this.tpAccount.SuspendLayout();
-			this.gbAccountExpiry.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// TCUserProperties
@@ -116,6 +116,61 @@
 			this.tpGeneral.Text = "General";
 			this.tpGeneral.UseVisualStyleBackColor = true;
 			// 
+			// tbWebpage
+			// 
+			this.tbWebpage.Location = new System.Drawing.Point(115, 327);
+			this.tbWebpage.Name = "tbWebpage";
+			this.tbWebpage.Size = new System.Drawing.Size(299, 20);
+			this.tbWebpage.TabIndex = 18;
+			this.tbWebpage.Text = "NotBoundToProperty!";
+			// 
+			// lblWebpage
+			// 
+			this.lblWebpage.AutoSize = true;
+			this.lblWebpage.Location = new System.Drawing.Point(12, 330);
+			this.lblWebpage.Name = "lblWebpage";
+			this.lblWebpage.Size = new System.Drawing.Size(57, 13);
+			this.lblWebpage.TabIndex = 17;
+			this.lblWebpage.Text = "&Web page";
+			// 
+			// tbEmail
+			// 
+			this.tbEmail.Location = new System.Drawing.Point(114, 295);
+			this.tbEmail.Name = "tbEmail";
+			this.tbEmail.Size = new System.Drawing.Size(299, 20);
+			this.tbEmail.TabIndex = 16;
+			this.tbEmail.Text = "NotBoundToProperty!";
+			// 
+			// lblEmail
+			// 
+			this.lblEmail.AutoSize = true;
+			this.lblEmail.Location = new System.Drawing.Point(11, 298);
+			this.lblEmail.Name = "lblEmail";
+			this.lblEmail.Size = new System.Drawing.Size(35, 13);
+			this.lblEmail.TabIndex = 15;
+			this.lblEmail.Text = "E-&mail";
+			// 
+			// tbPhoneNumber
+			// 
+			this.tbPhoneNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userPrincipalBindingSource, "VoiceTelephoneNumber", true));
+			this.tbPhoneNumber.Location = new System.Drawing.Point(114, 265);
+			this.tbPhoneNumber.Name = "tbPhoneNumber";
+			this.tbPhoneNumber.Size = new System.Drawing.Size(299, 20);
+			this.tbPhoneNumber.TabIndex = 14;
+			// 
+			// userPrincipalBindingSource
+			// 
+			this.userPrincipalBindingSource.DataSource = typeof(System.DirectoryServices.AccountManagement.UserPrincipal);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(11, 268);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(96, 13);
+			this.label1.TabIndex = 13;
+			this.label1.Text = "&Telephone number";
+			// 
 			// tbOffice
 			// 
 			this.tbOffice.Location = new System.Drawing.Point(114, 217);
@@ -140,10 +195,6 @@
 			this.tbDescription.Name = "tbDescription";
 			this.tbDescription.Size = new System.Drawing.Size(298, 20);
 			this.tbDescription.TabIndex = 10;
-			// 
-			// userPrincipalBindingSource
-			// 
-			this.userPrincipalBindingSource.DataSource = typeof(System.DirectoryServices.AccountManagement.UserPrincipal);
 			// 
 			// lblDescription
 			// 
@@ -242,6 +293,90 @@
 			this.tpAddress.Text = "Address";
 			this.tpAddress.UseVisualStyleBackColor = true;
 			// 
+			// tpAccount
+			// 
+			this.tpAccount.Controls.Add(this.gbAccountExpiry);
+			this.tpAccount.Controls.Add(this.clbAccountOptions);
+			this.tpAccount.Location = new System.Drawing.Point(4, 22);
+			this.tpAccount.Name = "tpAccount";
+			this.tpAccount.Size = new System.Drawing.Size(431, 380);
+			this.tpAccount.TabIndex = 2;
+			this.tpAccount.Text = "Account";
+			this.tpAccount.UseVisualStyleBackColor = true;
+			// 
+			// gbAccountExpiry
+			// 
+			this.gbAccountExpiry.Controls.Add(this.dtpExpiry);
+			this.gbAccountExpiry.Controls.Add(this.rbAtTheEndOf);
+			this.gbAccountExpiry.Controls.Add(this.rbExpiresNever);
+			this.gbAccountExpiry.Location = new System.Drawing.Point(8, 275);
+			this.gbAccountExpiry.Name = "gbAccountExpiry";
+			this.gbAccountExpiry.Size = new System.Drawing.Size(415, 102);
+			this.gbAccountExpiry.TabIndex = 1;
+			this.gbAccountExpiry.TabStop = false;
+			this.gbAccountExpiry.Text = "Account expires";
+			// 
+			// dtpExpiry
+			// 
+			this.dtpExpiry.Location = new System.Drawing.Point(150, 38);
+			this.dtpExpiry.Name = "dtpExpiry";
+			this.dtpExpiry.Size = new System.Drawing.Size(244, 20);
+			this.dtpExpiry.TabIndex = 2;
+			// 
+			// rbAtTheEndOf
+			// 
+			this.rbAtTheEndOf.AutoSize = true;
+			this.rbAtTheEndOf.Location = new System.Drawing.Point(6, 42);
+			this.rbAtTheEndOf.Name = "rbAtTheEndOf";
+			this.rbAtTheEndOf.Size = new System.Drawing.Size(86, 17);
+			this.rbAtTheEndOf.TabIndex = 1;
+			this.rbAtTheEndOf.TabStop = true;
+			this.rbAtTheEndOf.Text = "At the end of";
+			this.rbAtTheEndOf.UseVisualStyleBackColor = true;
+			this.rbAtTheEndOf.CheckedChanged += new System.EventHandler(this.ExpiryCheckedChanged);
+			// 
+			// rbExpiresNever
+			// 
+			this.rbExpiresNever.AutoSize = true;
+			this.rbExpiresNever.Location = new System.Drawing.Point(6, 19);
+			this.rbExpiresNever.Name = "rbExpiresNever";
+			this.rbExpiresNever.Size = new System.Drawing.Size(54, 17);
+			this.rbExpiresNever.TabIndex = 0;
+			this.rbExpiresNever.TabStop = true;
+			this.rbExpiresNever.Text = "Never";
+			this.rbExpiresNever.UseVisualStyleBackColor = true;
+			this.rbExpiresNever.CheckedChanged += new System.EventHandler(this.ExpiryCheckedChanged);
+			// 
+			// clbAccountOptions
+			// 
+			this.clbAccountOptions.FormattingEnabled = true;
+			this.clbAccountOptions.Items.AddRange(new object[] {
+            "User must change password at next logon",
+            "User cannot change password",
+            "Password never expires",
+            "Store password using reversible encryption",
+            "Account is disabled",
+            "Smart card is required for interactive login",
+            "Account is trusted for delegation",
+            "Account is sensitive and cannot be delegated",
+            "Use DES encryption types for this account",
+            "This account supports Kerberos AES 128 bit encryption",
+            "This account supports Kerberos AES 256 bit encryption",
+            "Do not require Kerberos preauthentication"});
+			this.clbAccountOptions.Location = new System.Drawing.Point(8, 196);
+			this.clbAccountOptions.Name = "clbAccountOptions";
+			this.clbAccountOptions.Size = new System.Drawing.Size(415, 64);
+			this.clbAccountOptions.TabIndex = 0;
+			// 
+			// tpMemberOf
+			// 
+			this.tpMemberOf.Location = new System.Drawing.Point(4, 22);
+			this.tpMemberOf.Name = "tpMemberOf";
+			this.tpMemberOf.Size = new System.Drawing.Size(431, 380);
+			this.tpMemberOf.TabIndex = 3;
+			this.tpMemberOf.Text = "Member Of";
+			this.tpMemberOf.UseVisualStyleBackColor = true;
+			// 
 			// splitContainer1
 			// 
 			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -293,133 +428,6 @@
 			this.btnApply.Text = "&Apply";
 			this.btnApply.UseVisualStyleBackColor = true;
 			// 
-			// tbPhoneNumber
-			// 
-			this.tbPhoneNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userPrincipalBindingSource, "VoiceTelephoneNumber", true));
-			this.tbPhoneNumber.Location = new System.Drawing.Point(114, 265);
-			this.tbPhoneNumber.Name = "tbPhoneNumber";
-			this.tbPhoneNumber.Size = new System.Drawing.Size(299, 20);
-			this.tbPhoneNumber.TabIndex = 14;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(11, 268);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(96, 13);
-			this.label1.TabIndex = 13;
-			this.label1.Text = "&Telephone number";
-			// 
-			// tbEmail
-			// 
-			this.tbEmail.Location = new System.Drawing.Point(114, 295);
-			this.tbEmail.Name = "tbEmail";
-			this.tbEmail.Size = new System.Drawing.Size(299, 20);
-			this.tbEmail.TabIndex = 16;
-			this.tbEmail.Text = "NotBoundToProperty!";
-			// 
-			// lblEmail
-			// 
-			this.lblEmail.AutoSize = true;
-			this.lblEmail.Location = new System.Drawing.Point(11, 298);
-			this.lblEmail.Name = "lblEmail";
-			this.lblEmail.Size = new System.Drawing.Size(35, 13);
-			this.lblEmail.TabIndex = 15;
-			this.lblEmail.Text = "E-&mail";
-			// 
-			// tbWebpage
-			// 
-			this.tbWebpage.Location = new System.Drawing.Point(115, 327);
-			this.tbWebpage.Name = "tbWebpage";
-			this.tbWebpage.Size = new System.Drawing.Size(299, 20);
-			this.tbWebpage.TabIndex = 18;
-			this.tbWebpage.Text = "NotBoundToProperty!";
-			// 
-			// lblWebpage
-			// 
-			this.lblWebpage.AutoSize = true;
-			this.lblWebpage.Location = new System.Drawing.Point(12, 330);
-			this.lblWebpage.Name = "lblWebpage";
-			this.lblWebpage.Size = new System.Drawing.Size(57, 13);
-			this.lblWebpage.TabIndex = 17;
-			this.lblWebpage.Text = "&Web page";
-			// 
-			// tpAccount
-			// 
-			this.tpAccount.Controls.Add(this.gbAccountExpiry);
-			this.tpAccount.Controls.Add(this.clbAccountOptions);
-			this.tpAccount.Location = new System.Drawing.Point(4, 22);
-			this.tpAccount.Name = "tpAccount";
-			this.tpAccount.Size = new System.Drawing.Size(431, 380);
-			this.tpAccount.TabIndex = 2;
-			this.tpAccount.Text = "Account";
-			this.tpAccount.UseVisualStyleBackColor = true;
-			// 
-			// tpMemberOf
-			// 
-			this.tpMemberOf.Location = new System.Drawing.Point(4, 22);
-			this.tpMemberOf.Name = "tpMemberOf";
-			this.tpMemberOf.Size = new System.Drawing.Size(431, 380);
-			this.tpMemberOf.TabIndex = 3;
-			this.tpMemberOf.Text = "Member Of";
-			this.tpMemberOf.UseVisualStyleBackColor = true;
-			// 
-			// clbAccountOptions
-			// 
-			this.clbAccountOptions.FormattingEnabled = true;
-			this.clbAccountOptions.Items.AddRange(new object[] {
-            "User must change password at next logon",
-            "User cannot change password",
-            "Password never expires",
-            "Store password using reversible encryption"});
-			this.clbAccountOptions.Location = new System.Drawing.Point(8, 175);
-			this.clbAccountOptions.Name = "clbAccountOptions";
-			this.clbAccountOptions.Size = new System.Drawing.Size(415, 94);
-			this.clbAccountOptions.TabIndex = 0;
-			// 
-			// gbAccountExpiry
-			// 
-			this.gbAccountExpiry.Controls.Add(this.dtpExpiry);
-			this.gbAccountExpiry.Controls.Add(this.rbAtTheEndOf);
-			this.gbAccountExpiry.Controls.Add(this.rbExpiresNever);
-			this.gbAccountExpiry.Location = new System.Drawing.Point(8, 275);
-			this.gbAccountExpiry.Name = "gbAccountExpiry";
-			this.gbAccountExpiry.Size = new System.Drawing.Size(415, 102);
-			this.gbAccountExpiry.TabIndex = 1;
-			this.gbAccountExpiry.TabStop = false;
-			this.gbAccountExpiry.Text = "Account expires";
-			// 
-			// rbExpiresNever
-			// 
-			this.rbExpiresNever.AutoSize = true;
-			this.rbExpiresNever.Location = new System.Drawing.Point(6, 19);
-			this.rbExpiresNever.Name = "rbExpiresNever";
-			this.rbExpiresNever.Size = new System.Drawing.Size(54, 17);
-			this.rbExpiresNever.TabIndex = 0;
-			this.rbExpiresNever.TabStop = true;
-			this.rbExpiresNever.Text = "Never";
-			this.rbExpiresNever.UseVisualStyleBackColor = true;
-			this.rbExpiresNever.CheckedChanged += new System.EventHandler(this.ExpiryCheckedChanged);
-			// 
-			// rbAtTheEndOf
-			// 
-			this.rbAtTheEndOf.AutoSize = true;
-			this.rbAtTheEndOf.Location = new System.Drawing.Point(6, 42);
-			this.rbAtTheEndOf.Name = "rbAtTheEndOf";
-			this.rbAtTheEndOf.Size = new System.Drawing.Size(86, 17);
-			this.rbAtTheEndOf.TabIndex = 1;
-			this.rbAtTheEndOf.TabStop = true;
-			this.rbAtTheEndOf.Text = "At the end of";
-			this.rbAtTheEndOf.UseVisualStyleBackColor = true;
-			this.rbAtTheEndOf.CheckedChanged += new System.EventHandler(this.ExpiryCheckedChanged);
-			// 
-			// dtpExpiry
-			// 
-			this.dtpExpiry.Location = new System.Drawing.Point(150, 38);
-			this.dtpExpiry.Name = "dtpExpiry";
-			this.dtpExpiry.Size = new System.Drawing.Size(244, 20);
-			this.dtpExpiry.TabIndex = 2;
-			// 
 			// UserConfigForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,13 +445,13 @@
 			this.tpGeneral.ResumeLayout(false);
 			this.tpGeneral.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.userPrincipalBindingSource)).EndInit();
+			this.tpAccount.ResumeLayout(false);
+			this.gbAccountExpiry.ResumeLayout(false);
+			this.gbAccountExpiry.PerformLayout();
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
-			this.tpAccount.ResumeLayout(false);
-			this.gbAccountExpiry.ResumeLayout(false);
-			this.gbAccountExpiry.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
