@@ -31,7 +31,7 @@ namespace ADPineapple
 		{
 			if (Dialogs.ShowDialog(DialogType.DeleteUserWarning).Result == TaskDialogInterop.TaskDialogSimpleResult.Yes)
 			{
-
+				
 			}
 			else
 			{

@@ -367,6 +367,7 @@
 			this.clbAccountOptions.Name = "clbAccountOptions";
 			this.clbAccountOptions.Size = new System.Drawing.Size(415, 64);
 			this.clbAccountOptions.TabIndex = 0;
+			this.clbAccountOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbAccountOptions_ItemCheck);
 			// 
 			// tpMemberOf
 			// 
